@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_new_app2/presentation/login.dart';
+import 'package:my_new_app2/presentation/main_Page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
+
   runApp(const MyApp());
 }
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         return Directionality(textDirection: TextDirection.rtl, child: child!,
         );
       },
-      home: const LoginPage(),
+      home: const MainPage(),
     );
   }
 }
